@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=0">
+  <title>Figma UX KIT markup list</title>
+  <link rel="canonical" href="">
+  <script src="resources/js/lib/jquery-3.6.0.min.js"></script>
+  <style type="text/css">
+    * {margin: 0;padding: 0;box-sizing: border-box;}
+    body {min-width: 1024px;padding: 0;font-family: 'Noto Sans KR', sans-serif;font-size: 12px;}
+    a {color: #57606a;text-decoration: none;}
+    a:hover {color: #e34c26 !important;}
+    caption {display: none;}
+    .codinglist {padding: 20px 415px 20px 20px;}
+    .codinglist h1 {margin: 10px 0;font-size: 22px;letter-spacing: -1px;color: #286EF0;}
+    .codinglist .title-wrap {display: flex;justify-content: space-between;align-items: center;}
+    .codinglist .info-wrap {text-align: right;}
+    .codinglist .info-wrap span {position: relative;display: inline-block;padding: 0 10px 0 20px;font-weight: 700;}
+    .codinglist .info-wrap span:before {display: block;position: absolute;top: 3px;left: 0;width: 12px;height: 12px;background-color: #e4e4e4;content: "";}
+    .codinglist .info-wrap span:last-child {padding-right: 0;}
+    .codinglist .cont {padding: 16px 0;}
+    .codinglist h2 {display: flex;align-items: center;padding: 8px 15px;margin-top: 10px;background-color: #f6f8fa;color: #24292f;font-size: 14px;border: 1px solid #d0d7de;border-radius: 6px 6px 0 0;}
+    .codinglist h2:first-child{margin-top: 0;}
+    .codinglist h2 span {font-weight: normal;font-size: 13px;}
+    .codinglist h2 div {margin-left: 6px;}
+    .codinglist h2 div span {font-size: 13px;}
+    .codinglist h2 div span:before {display: inline-block;width: 10px;height: 10px;margin-right: 6px;content: "";}
+    .codinglist h2 div span+span:not(.modify_end) {margin-left: 20px;}
+    .codinglist h2 div span.line {font-weight: 400;color: #999;}
+    .codinglist h2 div span.line:before {display: none;}
+    .codinglist h2 div span.modify_end {color: #ff8a18;}
+    .codinglist h2 div span.modify_end:before {display: none;}
+    .codinglist h2 em {color: #b8c6d6;font-weight: 400;font-style: normal;}
+    .codinglist .rate {display: block;color: #57606a;font-size: 12px;text-align: right;}
+    .codinglist .rate span {color: #db4e69;}
+    .codinglist .rate strong {font-weight: 500;}
+    .codinglist .table-wrap {border: 1px solid #d8dee4;border-top: 0;border-radius: 0 0 6px 6px;}
+    .codinglist .table-wrap + h2 {margin-top: 16px;}
+    .codinglist table {width: 100%;table-layout: auto;border-spacing: 0;border-collapse: collapse;border-radius: 0 0 6px 6px;overflow: hidden;}
+    .codinglist table thead th {padding: 6px 0;border-top: 0;background: #f6f8fa;font-size: 12px;font-weight: 500;}
+    .codinglist table tbody td {padding: 6px 10px;color: #57606a;font-size: 12px;border: 1px solid #eee;}
+    .codinglist table tbody td a {cursor: pointer;}
+    .codinglist table tbody td:last-child:before {display: inline-block;width: 10px;height: 10px;margin-right: 6px;content: "";}
+    .codinglist table tbody tr:hover td {background-color: #f9f9f9;}
+    .codinglist table tbody tr.hidden td {background-color: #f9f9f9;color: #bbb;text-decoration: line-through;}
+    .codinglist table tbody tr.hidden td:last-child:before {display: none;}
+    .codinglist table tbody td.text_center {text-align: center;}
+    .codinglist table tbody td:first-child, .codinglist table tbody td:last-child {text-align: center;}
+    .codinglist table .col01 {width: 40px;}
+    .codinglist table .col02 {width: 12%;}
+    .codinglist table .col03 {width: 15%;}
+    .codinglist table .col04 {width: 15%;}
+    .codinglist table .col05 {width: 14%;}
+    .codinglist table .col06 {width: 12%;}
+    .codinglist table .col07 {width: 9%;}
+    .codinglist table .col08 {width: auto;}
+    .codinglist table .col09 {width: 50px;}
+    .codinglist table .colEndDate {width: 100px;text-align: center;}
+    .codinglist table tbody tr.pb_end td a,
+    .codinglist table tbody tr.confirm_end td a,
+    .codinglist table tbody tr.modify_end td a {
+    color: #57606a;
+    }
+    .codinglist table tbody tr.pb_end td:last-child:before,
+    .codinglist .info-wrap span.pb_end:before,
+    .codinglist h2 div span.pb_end:before {
+    background-color: #fd8c73;
+    }
+    .codinglist table tbody tr.confirm_end td:last-child:before,
+    .codinglist .info-wrap span.confirm_end:before,
+    .codinglist h2 div span.confirm_end:before {
+    background-color: #0969da;
+    }
+    .codinglist table tbody tr.modify_end td:last-child:before,
+    .codinglist .info-wrap span.modify_end:before,
+    .codinglist h2 div span.modify_end:before {
+    background-color: #216e39;
+    box-sizing: border-box;
+    }
+    .codinglist table tbody tr.hidden td a {color: #bbb;}
+    .codinglist table tbody tr.off td {background-color: #e8e8e8;}
+    .codinglist table tbody tr.off:hover td {background-color: #e8e8e8;}
+
+    .codinglist-mobile {position: fixed;top: 40px;right: 20px;height: 100%;display: flex;z-index: 999000;}
+    .codinglist-iframe {width: 379px;height: 812px;background: #fff;border: none;border-radius: 3rem;box-shadow: 3px 23px 50px 0 rgb(0 0 0 / 10%);}
+
+    /*mobile*/
+    @media all and (max-width:768px) {
+      body {min-width: 425px;padding: 0;}
+      .codinglist {width: 100%;padding: 20px;}
+      .codinglist .cont {width: 100%;overflow-x: scroll;}
+      .codinglist h1 {margin: 0 0 15px;font-size: 18px;font-weight: 700;}
+      .codinglist h2 {font-size: 13px;}
+      .codinglist .info-wrap {display: none;}
+      .codinglist .rate {font-size: 12px;text-align: left;word-break: keep-all;}
+      .codinglist .rate > * {font-size: 12px !important;}
+      table th,table td {white-space: nowrap;}
+      .codinglist .table-wrap {overflow-x: scroll;}
+      .codinglist table tbody td {padding: 6px 10px;}
+      .codinglist-mobile {display: none;}
+    }
+  </style>
+</head>
+<body>
+  <div class="codinglist">
+    <div class="title-wrap">
+      <h1>Figma UX KIT</h1>
+
+      <div class="info-wrap">
+        <span class="pb_end"> :퍼블리싱 완료</span>
+        <span class="modify_end"> :수정 완료</span>
+        <span class="confirm_end"> :최종 완료</span>
+      </div>
+    </div>
+
+    <div class="rate"></div>
+
+    <div class="cont">
+      <h2 id="section00">Photography</h2>
+      <div class="table-wrap">
+        <table class="mobile-tbl">
+          <colgroup>
+            <col span="1" class="col01">
+            <col span="1" class="col02">
+            <col span="1" class="col03">
+            <col span="1" class="col04">
+            <col span="1" class="col05">
+            <col span="1" class="col06">
+            <col span="1" class="col07">
+            <col span="1" class="colEndDate">
+            <col span="1" class="col08">
+            <col span="1" class="col09">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">NO</th>
+              <th scope="col">1depth</th>
+              <th scope="col">2depth</th>
+              <th scope="col">3depth</th>
+              <th scope="col">4depth</th>
+              <th scope="col">5depth</th>
+              <th scope="col">화면 ID</th>
+              <th scope="col">종료일</th>
+              <th scope="col">비고</th>
+              <th scope="col">상태</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="pb_end">
+              <td></td>
+              <td>Onboarding</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text_center"><a href="./html/photography/UXKPY-001.html" target="_blank">UXKPY-001</a></td>
+              <td class="text_center"></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="pb_end">
+              <td></td>
+              <td>Login</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text_center"><a href="./html/photography/UXKPY-002.html" target="_blank">UXKPY-002</a></td>
+              <td class="text_center"></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="pb_end">
+              <td></td>
+              <td>Feed</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text_center"><a href="./html/photography/UXKPY-003.html" target="_blank">UXKPY-003</a></td>
+              <td class="text_center"></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="pb_end">
+              <td></td>
+              <td>Notifications</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text_center"><a href="./html/photography/UXKPY-004.html" target="_blank">UXKPY-004</a></td>
+              <td class="text_center"></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="pb_end">
+              <td></td>
+              <td>Upload</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text_center"><a href="./html/photography/UXKPY-005.html" target="_blank">UXKPY-005</a></td>
+              <td class="text_center"></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="pb_end">
+              <td></td>
+              <td>Search</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text_center"><a href="./html/photography/UXKPY-006.html" target="_blank">UXKPY-006</a></td>
+              <td class="text_center"></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr class="pb_end">
+              <td></td>
+              <td>Profile</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td class="text_center"><a href="./html/photography/UXKPY-007.html" target="_blank">UXKPY-007</a></td>
+              <td class="text_center"></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="section01">Sport</h2>
+        <div class="table-wrap">
+          <table class="mobile-tbl">
+            <colgroup>
+              <col span="1" class="col01">
+              <col span="1" class="col02">
+              <col span="1" class="col03">
+              <col span="1" class="col04">
+              <col span="1" class="col05">
+              <col span="1" class="col06">
+              <col span="1" class="col07">
+              <col span="1" class="colEndDate">
+              <col span="1" class="col08">
+              <col span="1" class="col09">
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">NO</th>
+                <th scope="col">1depth</th>
+                <th scope="col">2depth</th>
+                <th scope="col">3depth</th>
+                <th scope="col">4depth</th>
+                <th scope="col">5depth</th>
+                <th scope="col">화면 ID</th>
+                <th scope="col">종료일</th>
+                <th scope="col">비고</th>
+                <th scope="col">상태</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pb_end">
+                <td></td>
+                <td>Onboarding</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text_center"><a href="./html/sport/UXKSP-001.html" target="_blank">UXKSP-001</a></td>
+                <td class="text_center"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="pb_end">
+                <td></td>
+                <td>Login</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text_center"><a href="./html/sport/UXKSP-002.html" target="_blank">UXKSP-002</a></td>
+                <td class="text_center"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="pb_end">
+                <td></td>
+                <td>Feed</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text_center"><a href="./html/sport/UXKSP-003.html" target="_blank">UXKSP-003</a></td>
+                <td class="text_center"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="">
+                <td></td>
+                <td>Open Feed</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text_center"><a href="./html/sport/UXKSP-004.html" target="_blank">UXKSP-004</a></td>
+                <td class="text_center"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="">
+                <td></td>
+                <td>Elevation</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text_center"><a href="./html/sport/UXKSP-005.html" target="_blank">UXKSP-005</a></td>
+                <td class="text_center"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <!-- <tr class="">
+                <td></td>
+                <td>Stats</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text_center"><a href="./html/sport/UXKSP-006.html" target="_blank">UXKSP-006</a></td>
+                <td class="text_center"></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr class="">
+                <td></td>
+                <td>Heart Rate</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="text_center"><a href="./html/sport/UXKSP-007.html" target="_blank">UXKSP-007</a></td>
+                <td class="text_center"></td>
+                <td></td>
+                <td></td>
+              </tr> -->
+            </tbody>
+          </table>
+       </div>
+<!-- 
+       <h2 id="section02">Social</h2>
+       <div class="table-wrap">
+         <table class="mobile-tbl">
+           <colgroup>
+             <col span="1" class="col01">
+             <col span="1" class="col02">
+             <col span="1" class="col03">
+             <col span="1" class="col04">
+             <col span="1" class="col05">
+             <col span="1" class="col06">
+             <col span="1" class="col07">
+             <col span="1" class="colEndDate">
+             <col span="1" class="col08">
+             <col span="1" class="col09">
+           </colgroup>
+           <thead>
+             <tr>
+               <th scope="col">NO</th>
+               <th scope="col">1depth</th>
+               <th scope="col">2depth</th>
+               <th scope="col">3depth</th>
+               <th scope="col">4depth</th>
+               <th scope="col">5depth</th>
+               <th scope="col">화면 ID</th>
+               <th scope="col">종료일</th>
+               <th scope="col">비고</th>
+               <th scope="col">상태</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr class="">
+               <td></td>
+               <td>Onboarding</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="text_center"><a href="./html/social/UXKSO-001.html" target="_blank">UXKSO-001</a></td>
+               <td class="text_center"></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr class="">
+               <td></td>
+               <td>Login</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="text_center"><a href="./html/social/UXKSO-002.html" target="_blank">UXKSO-002</a></td>
+               <td class="text_center"></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr class="">
+               <td></td>
+               <td>Feed</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="text_center"><a href="./html/social/UXKSO-003.html" target="_blank">UXKSO-003</a></td>
+               <td class="text_center"></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr class="">
+               <td></td>
+               <td>Open Feed</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="text_center"><a href="./html/social/UXKSO-004.html" target="_blank">UXKSO-004</a></td>
+               <td class="text_center"></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr class="">
+               <td></td>
+               <td>Elevation</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="text_center"><a href="./html/social/UXKSO-005.html" target="_blank">UXKSO-005</a></td>
+               <td class="text_center"></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr class="">
+               <td></td>
+               <td>Stats</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="text_center"><a href="./html/social/UXKSO-006.html" target="_blank">UXKSO-006</a></td>
+               <td class="text_center"></td>
+               <td></td>
+               <td></td>
+             </tr>
+             <tr class="">
+               <td></td>
+               <td>Heart Rate</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td class="text_center"><a href="./html/social/UXKSO-007.html" target="_blank">UXKSO-007</a></td>
+               <td class="text_center"></td>
+               <td></td>
+               <td></td>
+             </tr>
+           </tbody>
+         </table>
+      </div> -->
+      
+      <div class="codinglist-mobile on">
+        <iframe id="codingListIframe" title="mobile preview" class="codinglist-iframe type-ipx" src=""></iframe>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        if (matchMedia("screen and (min-width: 1024px)").matches) {          
+          $('.codinglist .mobile-tbl a').on('mouseover', function () {
+            console.log($(this).attr('href'));
+            $('.codinglist-mobile').fadeIn();
+            $('#codingListIframe').attr('src', $(this).attr('href'));
+          });
+          $('.codinglist .pc-tbl a').on('mouseover', function () {
+            $('.codinglist-mobile').fadeOut();
+          });
+        } else {
+          $('.codinglist-mobile').hide();
+        }
+        $(".codinglist .cont").each(function () {
+          $(this).find("table tbody tr:not(.hidden)").each(function (index) {
+            $("td:first-child", this).text(index + 1);
+          });
+          $tr = $(this).find("table tbody tr:not(.hidden)");
+          $trIng = $(this).find("table tbody tr.pb_end:not(.hidden)");
+          $trEnd = $(this).find("table tbody tr.confirm_end:not(.hidden)");
+          $(".rate").html("<strong>총</strong> : " + $tr.length + "p &nbsp;<strong>잔여</strong> : " + ($tr.length - ($trIng.length + $trEnd.length)) + "p &nbsp;<strong>진행</strong> : " + ($trIng.length + $trEnd.length) + "p (<span>" + parseInt(($trIng.length + $trEnd.length) / $tr.length * 100) + "%</span>) &nbsp;<strong>완료</strong> : " + $trEnd.length + "p (<span>" + parseInt($trEnd.length / $tr.length * 100) + "%</span>)");
+        });
+
+        $('.codinglist h2').each(function () {
+          $(this).append('<div></div>');
+          $(this).children('div').append("<span class=\"line\">" + "(" + $(this).next('.table-wrap').find("tbody tr:not(.hidden)").length + ")</span>");
+        });
+      });
+    </script>
+</body>
+</html>

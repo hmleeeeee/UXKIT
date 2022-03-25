@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=yes">
+	<title>Photography-7 Profile </title>
+	<link rel="stylesheet" href="../../resources/css/ui.base.css">
+	<link rel="canonical" href="">
+	<script src="../../resources/js/lib/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/lib/masonry.pkgd.min.js"></script>
+	<script src="../../resources/js/ui.global.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>		
+</head>
+<body>
+	<div class="base-wrap">
+        <div class="base-header">
+            <div class="header-wrap">
+                <button type="button" class="btn-menu"><span class="hidden">menu</span></button>                            
+            </div>  
+        </div>
+
+		<div class="base-body">
+			<main class="base-main">
+                <div class="profile-card">
+                    <div class="fx-wrap" data-align="justify" data-valign="center">
+                        <div class="profile">
+                            <p class="name"><a href="#none">Lori Johnson</a></p>
+                            <span class="spec"><a href="#none">Model / San Francisco</a></span>
+                        </div>
+                        <div class="profile-img">
+                            <img src="../../resources/img/common/ico-profile.png" alt="">
+                        </div>
+                    </div>
+                    <ul class="count-wrap">
+                        <li>
+                            <a href="#none"><em class="num">10k</em></a>
+                            <span class="txt">Followers</span>
+                        </li>
+                        <li>
+                            <a href="#none"><em class="num">360</em></a>
+                            <span class="txt">Following</span>
+                        </li>
+                        <li>
+                            <a href="#none"><em class="num">1,900</em></a>
+                            <span class="txt">Photos</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="photography-cont mgt-xxxl">
+                    <div class="grid-wrap">
+                        <div class="grid">
+                            <div class="grid-sizer"><div>item 0</div></div>
+                            <div class="grid-item grid-item--width2"><div>item 1</div></div>
+                            <div class="grid-item grid-item--height2"><div>item 2</div></div>
+                            <div class="grid-item"><div>item 3</div></div>
+                            <div class="grid-item"><div>item 4</div></div>
+                            <div class="grid-item"><div>item 5</div></div>
+                            <div class="grid-item grid-item--width2"><div>item 6</div></div>
+                            <div class="grid-item"><div>item 7</div></div>
+                            <div class="grid-item"><div>item 8</div></div>
+                            <div class="grid-item"><div>item 9</div></div>
+                            <div class="grid-item grid-item--width3"><div>item 10</div></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- fnav -->
+                <div class="base-bottom">
+                    <nav class="fnav">
+                        <ul>
+                            <li class=""><a href="./UXKPY-003.html"><span class="hidden">page1</span></a></li>
+                            <li class=""><a href="./UXKPY-004.html"><span class="hidden">page2</span></a></li>
+                            <li class=""><a href="#none"><span class="hidden">page3</span></a></li>
+                            <li class=""><a href="./UXKPY-006.html"><span class="hidden">page4</span></a></li>
+                            <li class="on"><a href="./UXKPY-007.html"><span class="hidden">page5</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- //fnav -->
+			</main>
+		</div>
+	</div>
+	<script>
+		;(function (win, doc, jQuery, undefined) {
+			'use strict';
+
+			document.addEventListener("DOMContentLoaded", function(){
+				netive.common.init();
+                netive.common.gnb();
+			});
+
+            $('.grid').masonry({
+                itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer',
+            });
+
+		})(window, document, $);
+	</script>
+</body>
+</html>

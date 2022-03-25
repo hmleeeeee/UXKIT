@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=yes">
+	<title>Sport-4 Open Feed</title>
+	<link rel="stylesheet" href="../../resources/css/ui.base.css">
+	<link rel="canonical" href="">
+	<script src="../../resources/js/lib/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="../../resources/js/ui.global.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>		
+</head>
+<body>
+	<div class="base-wrap feed">
+        <div class="base-header">
+            <div class="header-wrap">
+                <div class="fx-wrap pd-n" data-align="justify" data-valign="center">
+                    <div class="head-tit">
+                        <button type="button" class="btn-prev"><span class="hidden">prev</span></button>
+                        <span>RIDE</span>
+                    </div>
+                    <div class="search">
+                        <button type="button" class="btn-search"><span class="hidden">검색</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="base-body">
+			<main class="base-main">
+                <div class="box-area">
+                    <div class="box-base pd-n">
+                        <div>
+                            <canvas id="myChart" style="width: 100%; height:412px"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- fnav -->
+                <div class="base-bottom">
+                    <nav class="fnav">
+                        <ul>
+                            <li class="on"><a href="./UXKPY-003.html"><span class="hidden">page1</span></a></li>
+                            <li class=""><a href="./UXKPY-004.html"><span class="hidden">page2</span></a></li>
+                            <li class=""><a href="#none"><span class="hidden">page3</span></a></li>
+                            <li class=""><a href="./UXKPY-006.html"><span class="hidden">page4</span></a></li>
+                            <li class=""><a href="./UXKPY-007.html"><span class="hidden">page5</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- //fnav -->
+			</main>
+		</div>
+	</div>
+	<script>
+		;(function (win, doc, jQuery, undefined) {
+			'use strict';
+
+			document.addEventListener("DOMContentLoaded", function(){
+				netive.common.init();
+                netive.common.gnb();            
+			});
+
+            
+		})(window, document, $);
+    </script>
+    
+    <script>
+        const labels = ['0','30', '60', '90', '120', '150', '180'];
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: 'Elevation',
+                    // backgroundColor: 'rgb(135, 143, 154,0.15)',
+                    backgroundColor: 'rgb(135, 143, 154,0.15)',
+                    borderWidth: 1,
+                    borderColor: 'rgb(135, 143, 154,0.2)',
+                    fill: true,
+                    tension: 0,
+                    data: [320, 320, 120, 200, 100, 150, 200],
+                },
+                {
+                    label: 'Speed',
+                    backgroundColor: 'rgb(135, 143, 154,0.1)',
+                    borderWidth: 1,
+                    borderColor: 'rgb(135, 143, 154,0.2)',
+                    fill: true,
+                    tension: 0,
+                    data: [280, 300, 250, 280, 150, 120, 120],
+                },
+                {
+                    label: 'Heart Rate',
+                    backgroundColor: 'rgb(135, 143, 154,0.05)',
+                    borderWidth: 1,
+                    borderColor: 'rgb(135, 143, 154,0.2)',
+                    fill: true,
+                    tension: 0,
+                    data: [0, 100, 250, 100, 150, 120, 120],
+                },
+            ]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+              options: {
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 12,
+                            }
+                        }
+                    }
+                },
+                animation: true,
+                layout: {
+                    padding: {
+                        top: 50
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        min: 0,
+                        max: 180,
+                        ticks: {
+                            stepSize: 30,
+                        },
+                        grid: {
+                            display: false
+                        }
+                    },
+                    y: {
+                        beginAtZero: false,
+                        min: 0,
+                        max: 400,
+                        ticks: {
+                            stepSize: 50,
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                }
+            },
+        };
+    </script>
+    <script>
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+    </script>
+    
+</body>
+</html>
