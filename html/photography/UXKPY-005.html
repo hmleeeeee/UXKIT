@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=yes">
+	<title>Photography-5 Upload </title>
+	<link rel="stylesheet" href="../../resources/css/ui.base.css">
+	<link rel="canonical" href="">
+	<script src="../../resources/js/lib/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/ui.global.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>		
+</head>
+<body>
+	<div class="base-wrap thumb">
+        <div class="base-header">
+            <div class="header-wrap">
+                <div class="fx-wrap" data-align="justify"> 
+                    <button type="button" class="btn-prev" onclick="history.back()"><span class="hidden">prev</span></button>
+                    <button type="button" class="btn-resize"><span class="hidden">resize</span></button>
+                </div>
+            </div>  
+        </div>
+		<div class="base-body">
+			<main class="base-main">
+                <div class="upload">
+                    <img src="../../resources/img/img-upload.png" alt="image upload">
+                </div>
+                <div class="feed-list column mgt-n">
+                    <ul>
+                        <li class="add"><button type="button">add</button></li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                        <li>list1</li>
+                    </ul>
+                </div>
+                <!-- fnav -->
+                <div class="base-bottom">
+                    <nav class="fnav">
+                        <ul>
+                            <li class="on"><a href="#none"><span class="hidden">thumbnail type</span></a></li>
+                            <li class=""><a href="#none"><span class="hidden">camera</span></a></li>
+                            <li class=""><a href="#none"><span class="hidden">video</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- //fnav -->
+			</main>
+		</div>
+	</div>
+	<script>
+		;(function (win, doc, jQuery, undefined) {
+			'use strict';
+
+			document.addEventListener("DOMContentLoaded", function(){
+				netive.common.init();
+                netive.common.gnb();
+			});
+
+		})(window, document, $);
+	</script>
+</body>
+</html>

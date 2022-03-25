@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=yes">
+	<title>Social-1 Onboarding</title>
+	<link rel="stylesheet" href="../../resources/css/ui.base.css">
+	<link rel="stylesheet" href="../../resources/css/lib/swiper-bundle.min.css">
+	<link rel="canonical" href="">
+	<script src="../../resources/js/lib/jquery-3.6.0.min.js"></script>
+	<script src="../../resources/js/lib/swiper-bundle.min.js"></script>
+	<script src="../../resources/js/ui.global.js"></script>
+	<script src="../../resources/js/ui.common.js"></script>		
+</head>
+<body>
+	<div class="base-wrap base-splash full">
+		<div class="base-header">
+			<div class="header-wrap">
+                <div class="fx-wrap" data-align="right">
+                    <button type="button" class="btn-skip" onclick="location.href='./UXKSP-002.html'">SKIP</button>
+                </div>
+			</div>
+		</div>
+		<div class="base-body social">
+			<main class="base-main">
+				<div class="swiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<p class="fs-l">Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do eiusmod.</p>
+						</div>
+						<div class="swiper-slide">
+							<p class="fs-l">Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do eiusmod.</p>
+						</div>
+						<div class="swiper-slide">
+							<p class="fs-l">Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do eiusmod.</p>
+						</div>
+						<div class="swiper-slide">
+							<p class="fs-l">Lorem ipsum dolor sit amet, consectetur adipisicing<br> elit, sed do eiusmod.</p>
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>					
+				</div>				
+			</main>
+		</div>
+	</div>
+	<script>
+		;(function (win, doc, jQuery, undefined) {
+			'use strict';
+
+			document.addEventListener("DOMContentLoaded", function(){
+
+				netive.common.init();
+
+				const swiper = new Swiper('.swiper', {
+					loop: true,
+					pagination: {
+						el: '.swiper-pagination',
+					},
+				});
+
+			});
+
+		})(window, document, $);
+	</script>
+</body>
+</html>
